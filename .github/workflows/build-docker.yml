@@ -21,7 +21,7 @@ jobs:
       - name: Build the Docker image
         run: |
           docker build . --file Dockerfile \
-          --tag ghcr.io/josxha/tgtg_alerts:${{ github.sha }} \
-          --tag ghcr.io/josxha/tgtg_alerts:latest
+          --tag ghcr.io/josxha/tgtg-alerts:${{ github.sha }} \
+          --tag ghcr.io/josxha/tgtg-alerts:latest
       - name: Push the Docker image
-        run: docker push ghcr.io/josxha/tgtg_alerts --all-tags
+        run: docker push ghcr.io/josxha/tgtg-alerts --all-tags
