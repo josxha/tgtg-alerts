@@ -14,7 +14,7 @@ class TgtgAlerts:
         self.cache = CacheService(self.config)
 
     async def currently_available(self):
-        print("List currently available")
+        print("List currently available...")
         items = self.tgtg.get_items()
         message = ""
         for item in items:
@@ -27,7 +27,7 @@ class TgtgAlerts:
         await self.telegram.send_message(message)
 
     async def new_available(self):
-        print("Get new offers")
+        print("Get new offers...")
         items = self.tgtg.get_items()
         for item in items:
             id = item['item']['item_id']
@@ -39,6 +39,12 @@ class TgtgAlerts:
         self.cache.save()
 
 
+async def loop():
+    while True:
+        await app.new_available()
+        print('sleep for 5 minutes...')
+        await asyncio.sleep(300)
+
 if __name__ == "__main__":
     app = TgtgAlerts()
-    asyncio.run(app.new_available())
+    asyncio.run(loop())
