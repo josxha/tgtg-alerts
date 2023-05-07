@@ -1,0 +1,15 @@
+version: '3'
+services:
+  tgtg-alerts:
+    image: ...:latest
+    container_name: tgtg-alerts
+    restart: unless-stopped
+    environment:
+      TELEGRAM_BOT_TOKEN: <bot_token>
+      TELEGRAM_CHAT_ID: <chat_id>
+      TGTG_ACCESS_TOKEN: <acces_token>
+      TGTG_COOKIE: <cookie>
+      TGTG_USER_ID: <user_id>
+    volumes:
+      # ./cache.log bust already exist on the host
+      - ./cache.log:/app/cache.log
