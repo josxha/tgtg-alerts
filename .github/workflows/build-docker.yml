@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     name: Build image
     steps:
       - name: Checkout code
@@ -20,7 +22,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the Docker image
         run: |
-          docker build . --file Dockerfile \
+          docker build . \
           --tag ghcr.io/josxha/tgtg-alerts:${{ github.sha }} \
           --tag ghcr.io/josxha/tgtg-alerts:latest
       - name: Push the Docker image
