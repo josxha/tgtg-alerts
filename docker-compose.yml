@@ -12,5 +12,5 @@ services:
       TGTG_USER_ID: <user_id>
       TGTG_COOKIE: <cookie>
     volumes:
-      # the file ./cache.log bust already exist on the host
+      # the file ./cache.log must already exist on the host
       - ./cache.log:/app/cache.log
