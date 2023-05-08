@@ -9,6 +9,10 @@ class CacheService:
     def __init__(self, config: ConfigService):
         self.path = "cache.log"
         print(f"Log file: {path.abspath(self.path)}")
+        if path.isdir(self.path):
+            print("The log file cache.log is a directory. You need to create the file on your host system first if the "
+                  "tool runs inside of a container.")
+            exit(2)
         if path.isfile(self.path):
             with open(self.path, "r") as f:
                 self.cache = f.readlines()
