@@ -11,6 +11,7 @@ services:
       TGTG_REFRESH_TOKEN: <refresh_token>
       TGTG_USER_ID: <user_id>
       TGTG_COOKIE: <cookie>
+      #INTERVAL: 60 # optional, in seconds, default: 60
     volumes:
       # the file ./cache.log must already exist on the host
       - ./cache.log:/app/cache.log

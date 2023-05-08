@@ -3,6 +3,10 @@ import os
 
 class ConfigService:
     def __init__(self):
+        # general
+        self.interval = 60
+        if 'INTERVAL' in os.environ:
+            self.interval = int(os.environ['INTERVAL'])
         # too good to go
         self.email = None
         if 'TGTG_EMAIL' in os.environ:
