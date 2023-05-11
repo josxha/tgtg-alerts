@@ -23,6 +23,8 @@ class CacheService:
         self.cache.append(f"{entry}\n")
 
     def remove(self, entry: str):
+        if not self.has(entry):
+            return
         self.cache.remove(f"{entry}\n")
         self.save()
 
