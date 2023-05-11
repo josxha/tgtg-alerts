@@ -37,7 +37,7 @@ class TgtgAlerts:
                 continue
             if self.cache.has(item_id):
                 continue
-            message = f"{item['display_name']}\n{item['items_available']} verfügbar\n\n{item['description']}"
+            message = f"{item['display_name']}\n{item['items_available']} verfügbar\n\n{item['item']['description']}"
             await self.telegram.send_message(message)
             self.cache.add(item_id)
         self.cache.save()
