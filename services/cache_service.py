@@ -22,6 +22,10 @@ class CacheService:
     def add(self, entry: str):
         self.cache.append(f"{entry}\n")
 
+    def remove(self, entry: str):
+        self.cache.remove(f"{entry}\n")
+        self.save()
+
     def has(self, entry: str):
         return f"{entry}\n" in self.cache
 

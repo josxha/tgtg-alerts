@@ -31,7 +31,9 @@ class TgtgAlerts:
         items = self.tgtg.get_items()
         for item in items:
             item_id = item['item']['item_id']
-            if self.cache.has(item_id):
+            available = item['items_available']
+            if (available == 0):
+                self.cache.remove(item_id)
                 continue
             message = f"{item['display_name']}: {item['items_available']} verfügbar"
             await self.telegram.send_message(message)
