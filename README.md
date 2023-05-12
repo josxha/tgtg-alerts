@@ -36,7 +36,7 @@ docker run -it --rm -e "TGTG_EMAIL=use_your_email_here" ghcr.io/josxha/tgtg-aler
 
 1. Ensure that the chat has been created by writing your bot a message.
 2. Contact [userinfobot](https://t.me/userinfobot) and start the chat.
-3. The Bot reply's with your user id.
+3. The Bot replies with your user id.
 
 ## Additional information
 
