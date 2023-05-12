@@ -15,8 +15,8 @@ class TgtgService:
             credentials = self.client.get_credentials()
             print(f"TGTG_ACCESS_TOKEN:\n{credentials['access_token']}\n\n"
                   f"TGTG_REFRESH_TOKEN:\n{credentials['refresh_token']}\n\n"
-                  f"TGTG_USER_ID:\n{credentials['TGTG_USER_ID']}\n\n"
-                  f"TGTG_COOKIE:\n{credentials['TGTG_COOKIE']}\n")
+                  f"TGTG_USER_ID:\n{credentials['user_id']}\n\n"
+                  f"TGTG_COOKIE:\n{credentials['cookie']}\n")
             exit(0)
         self.client = TgtgClient(
             access_token=config.access_token,
