@@ -4,7 +4,7 @@ import os
 class ConfigService:
     def __init__(self):
         # general
-        self.interval = 60
+        self.interval = 3600  # 1 hour
         if 'INTERVAL' in os.environ:
             self.interval = int(os.environ['INTERVAL'])
         # too good to go
