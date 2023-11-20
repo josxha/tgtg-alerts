@@ -1,8 +1,8 @@
 # Too Good To Go Alerts
 
-### Too Good To Go improved their bot detection. This tool doesn't work any longer.
-
 This tool is a self-hosted solution to receive Telegram notifications when your favorite marked stores have a new offer.
+
+> ### Too Good To Go improved their bot detection. This tool doesn't work any longer.
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/josxha/tgtg-alerts/build-docker.yml)
 ![GitHub](https://img.shields.io/github/license/josxha/tgtg-alerts)
